@@ -1,8 +1,8 @@
 /* =========================================================
- * MomentDatepicker 
+ * MomentDatepicker
  * Based on http://www.eyecon.ro/bootstrap-datepicker
  * =========================================================
- * Copyright 2012 Andres Moschini 
+ * Copyright 2012 Andres Moschini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,7 +161,7 @@
         place: function () {
             var sourceItem = this.component ? this.component : this.element;
             var offset = sourceItem.offset();
-            
+
             if (this.calendarPlacement == 'left') {
                 this.picker.css({
                     top: offset.top + this.height,
@@ -177,12 +177,12 @@
         lastValue: null,
         triggerChangeDate: function () {
             var newValue = this.moment ? this.moment.valueOf() : null;
-            if (newValue != this.lastValue) {
-                this.lastValue = newValue;
-                this.element.trigger({
-                    type: 'changeDate'
-                });
-            }
+
+            this.lastValue = newValue;
+            this.element.trigger({
+                type: 'changeDate'
+            });
+
             if (this.autoHide)
                 this.hide();
         },
